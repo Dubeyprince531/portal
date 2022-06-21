@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>job portal otp verification </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+	
+	<!-- CSS here -->
+		<link rel="stylesheet" href="{%static '/assets/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/slicknav.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/price_rangs.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/animate.min.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/magnific-popup.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/fontawesome-all.min.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/themify-icons.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/slick.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/nice-select.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/style.css' %}">
+		<link rel="stylesheet" href="{%static '/assets/css/responsive.css' %}">
+</head>
+
+            <center>
+			<div class="section-top-border">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<h3 class="mb-30">OTP verification</h3>
+						<center>
+							{% if message %}
+							<div class="alert alert-{{class}}">
+								{{message}}
+							</div>
+							{% endif %}
+						</center>
+						<form class="login-form" method="POST" action="{% url 'otp' %}">
+                            {% csrf_token %}
+                          
+							<div class="mt-10">
+            </div>
+            </center>
+                       
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>your otp<span class="text-danger">*</span></label>
+                                        
+                                           
+                                        </select>
+                                    </div>
+                                </div>    
+								<div class="mt-10">
+									<input type="email" name="email" placeholder="Email address"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
+										class="" value="{{email}}" readonly>
+								</div>
+							
+							<div class="mt-10">
+								<input type="text" name="otp" placeholder="Enter OTP"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter OTP'" required
+									class="input">
+							</div>
+                    <center>                               							
+                    <div class="header-btn d-none f-right d-lg-block">
+						<button class="btn btn-primary w-100">Verify</button>                             
+                    </div>
+                    </center>
+							<!-- For Gradient Border Use -->
+							<!-- <div class="mt-10">
+										<div class="primary-input">
+											<input id="primary-input" type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'">
+											<label for="primary-input"></label>
+										</div>
+									</div> -->
+
+
+	
+<!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{%static '/./assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{%static '/./assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{%static '/./assets/js/popper.min.js' %}"></script>
+        <script src="{%static '/./assets/js/bootstrap.min.js' %}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{%static '/./assets/js/jquery.slicknav.min.js' %}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{%static '/./assets/js/owl.carousel.min.js' %}"></script>
+		<script src="{%static '/./assets/js/slick.min.js' %}"></script>
+		<script src="{%static '/./assets/js/price_rangs.js' %}"></script>
+		
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{%static '/./assets/js/wow.min.js' %}"></script>
+		<script src="{%static '/./assets/js/animated.headline.js' %}"></script>
+		<script src="{%static '/./assets/js/jquery.magnific-popup.js' %}"></script>
+		
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{%static '/./assets/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.nice-select.min.js' %}"></script>
+		<script src="{%static '/./assets/js/jquery.sticky.js' %}"></script>
+        
+        <!-- contact js -->
+        <script src="{%static '/./assets/js/contact.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.form.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.validate.min.js' %}"></script>
+        <script src="{%static '/./assets/js/mail-script.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{%static '/./assets/js/plugins.js' %}"></script>
+        <script src="{%static '/./assets/js/main.js' %}"></script>
+        
+</body>
+</html>

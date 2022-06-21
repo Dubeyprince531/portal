@@ -1,0 +1,213 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Profile </title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  
+   <!-- CSS here -->
+   <link rel="stylesheet" href="{%static '/assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/owl.carousel.min.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/slicknav.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/animate.min.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/price_rangs.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/fontawesome-all.min.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/themify-icons.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/themify-icons.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/slick.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/nice-select.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/style.css' %}">
+   <link rel="stylesheet" href="{%static '/assets/css/responsive.css' %}">
+</head>
+
+<body>
+   <!-- Preloader Start -->
+   <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+               <div class="preloader-circle"></div>
+               <div class="preloader-img pere-text">
+                  <img src="assets/img/logo/logo.png" alt="">
+               </div>
+            </div>
+      </div>
+   </div>
+   <!-- Preloader Start-->
+   <header>
+      <!-- Header Start -->
+                              <!-- Main-menu -->
+
+                      <!-- Mobile Menu -->
+                      <div class="col-12">
+                          <div class="mobile_menu d-block d-lg-none"></div>
+                      </div>
+                  </div>
+              </div>
+         </div>
+     </div>
+      <!-- Header End -->
+  </header>
+   <!-- Hero Area Start-->
+   <div class="slider-area ">
+      <div class="single-slider section-overly slider-height2 d-flex align-items-center">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-12">
+                      <div class="hero-cap text-center">
+                          <h2>Profile</h2>
+                          <form class="update-form" method="POST" action="{% url 'updateprofile' pk=request.session.id %}" enctype="multipart/form-data">
+                              {% csrf_token %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+   </div>
+   <!-- Hero Area End -->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
+                  </div>
+
+
+
+
+               </div>
+
+                        <div class="col-sm-6">
+                           <div class="form-group" >
+                              <h6>Firstname</h6>
+                              <input class="form-control" name="firstname" id="firstname" type="text" placeholder="Firstname" value="{{can.firstname}}"> <div class="col-sm-6">
+                                 <div class="form-group">
+                                    <h6>Lastname</h6>
+                                    <input class="form-control" name="lastname" id="lastname" type="text" placeholder="Lastname" value="{{request.session.lastname}}"> 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>JobCategory</h6>
+                              <input class="form-control" name="jobcategory" id="jobcategory" type="text" placeholder="Job Category" value="{{can.jobcategory}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>City</h6>
+                              <input class="form-control" name="city" id="city" type="text" placeholder="city" value="{{can.city}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>State</h6>
+                              <input class="form-control" name="state" id="state" type="text" placeholder="State" value="{{can.state}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Address</h6>
+                              <input class="form-control" name="address" id="address" type="text" placeholder="Type Your Address" value="{{can.address}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Date Your Birth</h6>
+                              <input class="form-control" name="dob" id="dob" type="text" placeholder="DOB" value="{{can.dob}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Experience</h6>
+                              <input class="form-control" name="experience" id="experience" type="number" placeholder="Experience" value="{{can.experience}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Email Address</h6>
+                              <input class="form-control" name="email" id="email" type="email" placeholder="Email" value="{{request.session.email}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Phone Number</h6>
+                              <input class="form-control" name="contact" id="contact" type="text" placeholder="Mobile No." value="{{can.contact}}">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <h6>Gender</h6>
+                              <input class="form-control" name="gender" id="gender" type="text" placeholder="Gender" value="{{can.gender}}">
+                           </div>
+                        </div>
+                        <div class="col-12">
+                           <div class="form-group">
+                              <input class="form-control" name="website" id="website" type="text" placeholder="Website Portfolio" value="{{can.website}}">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                      
+                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">update profile</button>
+                      
+                     </div>
+                  </form>
+               </div>
+            </div>
+
+   
+   <!--================ Blog Area end =================-->
+
+
+   
+<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+      <script src="{%static '/./assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{%static '/./assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{%static '/./assets/js/popper.min.js' %}"></script>
+        <script src="{%static '/./assets/js/bootstrap.min.js' %}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{%static '/./assets/js/jquery.slicknav.min.js' %}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{%static '/./assets/js/owl.carousel.min.js' %}"></script>
+        <script src="{%static '/./assets/js/slick.min.js' %}"></script>
+        <script src="{%static '/./assets/js/price_rangs.js' %}"></script>
+
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{%static '/./assets/js/wow.min.js' %}"></script>
+		<script src="{%static '/./assets/js/animated.headline.js' %}"></script>
+		
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{%static '/./assets/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.nice-select.min.js' %}"></script>
+		<script src="{%static '/./assets/js/jquery.sticky.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.magnific-popup.js' %}"></script>
+
+        <!-- contact js -->
+        <script src="{%static '/./assets/js/contact.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.form.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.validate.min.js' %}"></script>
+        <script src="{%static '/./assets/js/mail-script.js' %}"></script>
+        <script src="{%static '/./assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{%static '/./assets/js/plugins.js' %}"></script>
+        <script src="{%static '/./assets/js/main.js' %}"></script>
+        
+</body>
+</html>

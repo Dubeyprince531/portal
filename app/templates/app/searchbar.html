@@ -1,0 +1,22 @@
+{% extends "app/index.html" %}
+
+{% block content %}
+    <center>
+    {% if searchbar %}
+            <h1> you searched for {{ searchbar }} </h1>
+            <br/>
+            {% for JobDetails in job_detail %}
+                {{ JobDetails }} - {{ JobDetails.jobname }}
+            <br/>
+            {% endfor %}
+    {% else %}
+            <h1> you forgot to search </h1>
+    {% endif %}
+
+
+
+
+
+
+    </center>
+{% endblock %}
